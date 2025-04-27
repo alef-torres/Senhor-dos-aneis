@@ -23,7 +23,8 @@ namespace SenhorDosAneis.Atributos
             this.inteligencia = inteligencia;
             this.constituicao = constituicao;
         }
-
+        
+        public int PosicaoDoPersonagemNoMapa {get; set;}
         public int Forca { get { return this.forca.Forca; } }
         public int Agilidade { get { return this.agilidade.Agilidade; } }
         public int Inteligencia { get { return this.inteligencia.Inteligencia; } }

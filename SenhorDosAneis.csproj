@@ -50,6 +50,8 @@
     <Compile Include="Classes\Arqueiro.cs" />
     <Compile Include="Classes\Guerreiro.cs" />
     <Compile Include="Classes\Mago.cs" />
+    <Compile Include="Excecoes\PersonagemJaEstaNoMapaException.cs" />
+    <Compile Include="Excecoes\PersonagemNaoEncontradoNoMapaException.cs" />
     <Compile Include="PB\PersonagemBase.cs" />
     <Compile Include="Personagens\Aragorn.cs" />
     <Compile Include="Personagens\Boromir.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Racas\Humano.cs" />
     <Compile Include="Racas\Maia.cs" />
     <Compile Include="Racas\Monstro.cs" />
+    <Compile Include="Simulacao\Mapa.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

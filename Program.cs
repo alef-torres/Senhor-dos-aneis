@@ -12,8 +12,7 @@ namespace SenhorDosAneis
     {
         static void Main(string[] args)
         {
-            Aragorn aragorn = new Aragorn();
-            aragorn.Falar();
+            
         }
     }
 }
