@@ -1,0 +1,7 @@
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\bin\Debug\SenhorDosAneis.exe.config
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\bin\Debug\SenhorDosAneis.exe
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\bin\Debug\SenhorDosAneis.pdb
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\obj\Debug\SenhorDosAneis.csproj.AssemblyReference.cache
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\obj\Debug\SenhorDosAneis.csproj.CoreCompileInputs.cache
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\obj\Debug\SenhorDosAneis.exe
+C:\Users\alef_\Desktop\programação\Games\SenhorDosAneis\SenhorDosAneis\obj\Debug\SenhorDosAneis.pdb

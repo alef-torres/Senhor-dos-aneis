@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46D361AF-F0FF-4F15-AAE7-4710AF36BA3C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SenhorDosAneis</RootNamespace>
+    <AssemblyName>SenhorDosAneis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Atributos\AtributoAgilidade.cs" />
+    <Compile Include="Atributos\AtributoConstituicao.cs" />
+    <Compile Include="Atributos\AtributoForca.cs" />
+    <Compile Include="Atributos\AtributoInteligencia.cs" />
+    <Compile Include="Classes\Arqueiro.cs" />
+    <Compile Include="Classes\Guerreiro.cs" />
+    <Compile Include="Classes\Mago.cs" />
+    <Compile Include="PB\PersonagemBase.cs" />
+    <Compile Include="Personagens\Aragorn.cs" />
+    <Compile Include="Personagens\Boromir.cs" />
+    <Compile Include="Personagens\Gandalf.cs" />
+    <Compile Include="Personagens\Gimli.cs" />
+    <Compile Include="Personagens\Goblim.cs" />
+    <Compile Include="Personagens\Legolas.cs" />
+    <Compile Include="Personagens\Orc.cs" />
+    <Compile Include="Personagens\Saruman.cs" />
+    <Compile Include="Personagens\Urukhai.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racas\Anao.cs" />
+    <Compile Include="Racas\Elfo.cs" />
+    <Compile Include="Racas\Humano.cs" />
+    <Compile Include="Racas\Maia.cs" />
+    <Compile Include="Racas\Monstro.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
