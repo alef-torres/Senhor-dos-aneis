@@ -3,6 +3,7 @@ using SenhorDosAneis.Excecoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,74 +12,132 @@ namespace SenhorDosAneis.Simulacao
     public class Mapa
     {
 
-        protected List<PersonagemBase> personages = new List<PersonagemBase>(10);
+        private List<PersonagemBase> campo = new List<PersonagemBase>(10);
+
+        public Mapa() 
+        {
+            PrenchedorDoMapa();
+        }
+
+        public List<PersonagemBase> Campo { get { return campo; } }
 
         private void PrenchedorDoMapa() 
         {
             int tamanhoMaximoMapa = 10;
 
-            while (personages.Count < tamanhoMaximoMapa)
+            while (campo.Count < tamanhoMaximoMapa)
             {
-                personages.Add(null);
+                campo.Add(null);
+            }
+        }
+
+        public void RemovedorDePersonagensMortosNoCampo() 
+        {
+            for (int i = 0; i < campo.Count; i++) 
+            {
+                if (campo[i] != null && campo[i].Constituicao <= 0) 
+                {
+                    campo[i] = null; 
+                }
             }
         }
 
         public String ExibirMapa() 
         {
-            PrenchedorDoMapa();
-
             StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < personages.Capacity; i++)
+            sb.Append('|');
+            for (int i = 0; i < campo.Capacity; i++)
             {
-                if (personages[i] == null)
+                if (campo[i] == null)
                 {
                     sb.Append(' ');  
                 }
                 else
                 {
-                    sb.Append(personages[i].ToString());  
+                    sb.Append(campo[i].ToString());  
                 }
 
-                if (i < personages.Capacity - 1)
+                if (i < campo.Capacity - 1)
                 {
                     sb.Append('|');
                 }
             }
-
             sb.Append('|');  
 
             return sb.ToString();
 
         }
 
-        public void Inserir(int posicao, PersonagemBase personagem) 
+        public void InserirPersonagensNoMapa(int posicao, PersonagemBase personagem)
         {
-            int posicaoRealNaLista = posicao - 1;
+            int posicaoRealNaLista = posicao;
 
-            PrenchedorDoMapa();
-
-            foreach (PersonagemBase p in  personages) 
+            if(posicaoRealNaLista < 0 || posicaoRealNaLista > 9) 
             {
-                if (p == personagem) 
+                throw new ArgumentOutOfRangeException("Posição inválida. Deve ser entre 1 e 10.");
+            }
+            
+            foreach (PersonagemBase p in campo)
+            {
+                if (p == personagem)
                 {
                     throw new PersonagemJaEstaNoMapaException("");
                 }
             }
+    
+            if (campo[posicaoRealNaLista] == null)
+            {
+                campo[posicaoRealNaLista] = personagem;
+                personagem.PosicaoDoPersonagemNoMapa = posicaoRealNaLista;
+            } else 
+            {
+                throw new PosicaoOcupadaException("");
+            }
 
-            try
-            {
-                if (personages[posicaoRealNaLista] == null)
-                {
-                    personages[posicaoRealNaLista] = personagem;
-                    personagem.PosicaoDoPersonagemNoMapa = posicaoRealNaLista;
-                }
-            }
-            catch (PersonagemNaoEncontradoNoMapaException ex) 
-            {
-                Console.WriteLine("Posição já ocupada {0}", ex);
-            }
         }
 
-    }
+        public Boolean BuscarPosicaoNoMapa(int posicao) 
+        {
+            int posicaoRealNaLista = posicao - 1;
+
+            if (posicaoRealNaLista < 0 || posicaoRealNaLista > 9)
+            {
+                throw new ArgumentOutOfRangeException("Posição inválida. Deve ser entre 1 e 10.");
+            }
+          
+            if (campo[posicaoRealNaLista] != null)
+                {
+                    return true;
+                }                                        
+            return false;
+        }
+
+        public void MovimentarPersonagensNoCampo(int quantidadeMovimentos, PersonagemBase personagem) 
+        {
+            if (!personagem.FazParteDaSociedadeDoAnel)
+            {
+                quantidadeMovimentos = - quantidadeMovimentos;
+            }
+
+            int posicaoAtual = personagem.PosicaoDoPersonagemNoMapa;
+            int novaPosicao = posicaoAtual + quantidadeMovimentos;
+
+            if (novaPosicao >= campo.Count || novaPosicao < 0)
+            {
+                return;
+            }
+
+            if (campo[novaPosicao] != null) 
+            {
+                return;
+            }
+
+            campo[posicaoAtual] = null;
+
+            personagem.PosicaoDoPersonagemNoMapa = novaPosicao;
+
+            campo[novaPosicao] = personagem;
+
+        }
+    } 
 }

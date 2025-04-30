@@ -11,7 +11,7 @@ namespace SenhorDosAneis.Personagens
 {
     public class Aragorn : Guerreiro, Humano
     {
-        public Aragorn(bool sociedadeDoAnel = true, int forca = 10, int agilidade = 6, int inteligencia = 7, int constituicao = 40) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
+        public Aragorn(Boolean sociedadeDoAnel = true, int forca = 10, int agilidade = 6, int inteligencia = 7, int constituicao = 40) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
         {
         }
 

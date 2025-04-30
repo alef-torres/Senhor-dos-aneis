@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Racas
 {
-    internal interface Maia
+    public interface Maia
     {
         Maia Recucitar();
         void Falar();

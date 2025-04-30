@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Racas
 {
-    internal interface Anao
+    public interface Anao
     {
         void Beber();
 

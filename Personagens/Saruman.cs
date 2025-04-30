@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Personagens
 {
-    internal class Saruman : Mago, Maia
+    public class Saruman : Mago, Maia
     {
         public Saruman(bool sociedadeDoAnel = false, int forca = 2, int agilidade = 2, int inteligencia = 9, int constituicao = 70) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
         {

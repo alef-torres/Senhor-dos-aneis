@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Personagens
 {
-    internal class Gandalf : Mago, Maia
+    public class Gandalf : Mago, Maia
     {
         public Gandalf(bool sociedadeDoAnel = true, int forca = 2, int agilidade = 3, int inteligencia = 10, int constituicao = 80) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
         {

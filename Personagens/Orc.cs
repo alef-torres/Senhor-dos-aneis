@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Personagens
 {
-    internal class Orc : Guerreiro, Monstro
+    public class Orc : Guerreiro, Monstro
     {
         public Orc(bool sociedadeDoAnel = false, int forca = 7, int agilidade = 6, int inteligencia = 1, int constituicao = 20) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
         {

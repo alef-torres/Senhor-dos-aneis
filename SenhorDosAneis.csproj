@@ -52,6 +52,7 @@
     <Compile Include="Classes\Mago.cs" />
     <Compile Include="Excecoes\PersonagemJaEstaNoMapaException.cs" />
     <Compile Include="Excecoes\PersonagemNaoEncontradoNoMapaException.cs" />
+    <Compile Include="Excecoes\PosicaoOcupadaException.cs" />
     <Compile Include="PB\PersonagemBase.cs" />
     <Compile Include="Personagens\Aragorn.cs" />
     <Compile Include="Personagens\Boromir.cs" />

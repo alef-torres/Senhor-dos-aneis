@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Personagens
 {
-    internal class Gimli : Guerreiro, Anao
+    public class Gimli : Guerreiro, Anao
     {
         private int quantidadeDeBebidas = 0;
         public Gimli(bool sociedadeDoAnel = true, int forca = 9, int agilidade = 2, int inteligencia = 4, int constituicao = 60) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))

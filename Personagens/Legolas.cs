@@ -1,6 +1,7 @@
 ﻿using SenhorDosAneis.Atributos;
 using SenhorDosAneis.Classes;
 using SenhorDosAneis.Racas;
+using SenhorDosAneis.Simulacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Personagens
 {
-    internal class Legolas : Arqueiro, Elfo
+    public class Legolas : Arqueiro, Elfo
     {
         public Legolas(bool sociedadeDoAnel = true, int forca = 5, int agilidade = 10, int inteligencia = 6, int constituicao = 80) : base(sociedadeDoAnel, new AtributoForca(forca), new AtributoAgilidade(agilidade), new AtributoInteligencia(inteligencia), new AtributoConstituicao(constituicao))
         {

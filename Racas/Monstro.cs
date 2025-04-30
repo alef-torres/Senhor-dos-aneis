@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenhorDosAneis.Racas
 {
-    internal interface Monstro
+    public interface Monstro
     {
         void Grunir();
     }

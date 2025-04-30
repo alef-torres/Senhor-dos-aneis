@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenhorDosAneis.Simulacao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,11 @@ namespace SenhorDosAneis.Atributos
             this.constituicao = constituicao;
         }
         
-        public int PosicaoDoPersonagemNoMapa {get; set;}
+        public int PosicaoDoPersonagemNoMapa { get; set; }
+        public Boolean FazParteDaSociedadeDoAnel
+        {
+            get { return this.fazParteDaSociedadeDoAnel; }
+        }
         public int Forca { get { return this.forca.Forca; } }
         public int Agilidade { get { return this.agilidade.Agilidade; } }
         public int Inteligencia { get { return this.inteligencia.Inteligencia; } }
@@ -36,6 +41,7 @@ namespace SenhorDosAneis.Atributos
 
         public abstract void Atacar();
         public abstract void SofrerDano(int dano);
+        public abstract void SeMovimentarPeloMapa(Mapa mapa);
 
     }
 }
