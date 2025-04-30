@@ -25,14 +25,21 @@ namespace SenhorDosAneis.Classes
             mapa.MovimentarPersonagensNoCampo(1, this);
         }
 
-        public override void Atacar()
+        public override void Atacar(Mapa mapa)
         {
-            throw new NotImplementedException();
+            int danoDoMago = this.Inteligencia;
+            for (int i = 0; i < mapa.Campo.Count; i++) 
+            {
+                if (mapa.Campo[i] != null && mapa.Campo[i].FazParteDaSociedadeDoAnel != this.FazParteDaSociedadeDoAnel) 
+                {
+                    mapa.Campo[i].SofrerDano(danoDoMago);
+                }
+            }
         }
 
         public override void SofrerDano(int dano)
         {
-            throw new NotImplementedException();
+            this.Constituicao = Constituicao - dano;
         }
     }
 }

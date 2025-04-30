@@ -39,7 +39,7 @@ namespace SenhorDosAneis.Atributos
             set { this.constituicao.Constituicao = value; }
         }
 
-        public abstract void Atacar();
+        public abstract void Atacar(Mapa mapa);
         public abstract void SofrerDano(int dano);
         public abstract void SeMovimentarPeloMapa(Mapa mapa);
 

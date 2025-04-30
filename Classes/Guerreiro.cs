@@ -19,10 +19,33 @@ namespace SenhorDosAneis.Classes
             mapa.MovimentarPersonagensNoCampo(1, this);
         }
 
-        public override void Atacar() 
-        { }
+        public override void Atacar(Mapa mapa) 
+        {
+            int posGuerreiro = this.PosicaoDoPersonagemNoMapa;
+            int danoDoGuerreiro = this.Forca * 2;
+            int posicaoInimigo;
+            if (mapa.Campo[posGuerreiro + 1] != null) 
+            {
+                if (mapa.Campo[posGuerreiro + 1].FazParteDaSociedadeDoAnel != this.FazParteDaSociedadeDoAnel) 
+                {
+                    posicaoInimigo = posGuerreiro + 1;
+                    mapa.Campo[posicaoInimigo].SofrerDano(danoDoGuerreiro);
+                }
+            }
+            if (mapa.Campo[posGuerreiro - 1] != null)
+            {
+                if (mapa.Campo[posGuerreiro - 1].FazParteDaSociedadeDoAnel != this.FazParteDaSociedadeDoAnel)
+                {
+                    posicaoInimigo = posGuerreiro - 1;
+                    mapa.Campo[posicaoInimigo].SofrerDano(danoDoGuerreiro);
+                }
+            }
+
+        }
 
         public override void SofrerDano(int dano) 
-        { }
+        {
+            this.Constituicao = Constituicao - dano;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace SenhorDosAneis.Personagens
         }
         public Maia Recucitar()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void Falar() 

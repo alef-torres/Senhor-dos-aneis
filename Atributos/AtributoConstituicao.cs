@@ -25,11 +25,7 @@ namespace SenhorDosAneis.Atributos
 
             set
             {
-                constituicao -= value;
-                if (constituicao < 0)
-                {
-                    constituicao = 0;
-                }
+                constituicao = value < 0 ? 0 : value;
             }
         }
     }
