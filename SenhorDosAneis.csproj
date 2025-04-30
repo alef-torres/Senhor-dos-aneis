@@ -71,6 +71,7 @@
     <Compile Include="Racas\Maia.cs" />
     <Compile Include="Racas\Monstro.cs" />
     <Compile Include="Simulacao\Mapa.cs" />
+    <Compile Include="Simulacao\Simulador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
